@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="data_analysis_modified.js" ></script>
+    </head>
+    <body>
+        <h1>Data Analysis</h1>
+        <div>Enter comma separated values</div>
+        <input type = "text" id = "input_box">
+        <button onclick="call_function()">Submit</button>
+        <div>
+            <form>  
+                <label> choose operation on numbers from the drop down menu </label>  
+                <select id = "final_option">  
+                <option value = "up"> up  
+                </option>  
+                <option value = "down"> down   
+                </option>  
+                <option value = "mean"> mean
+                </option>  
+                <option value = "median"> median 
+                </option>
+                <option value = "std_dev"> std_dev 
+                </option>
+                <option value = "max"> max
+                </option>
+                <option value = "min"> min 
+                </option>
+                <option value = "sum"> sum
+                </option>  
+                </select>  
+            </form>
+              
+          <!-- <script src ="data_analysis_modified.js" async defer></script>-->
+           <button onclick="perform_operation()">perform operation and display result</button>
+            
+        </div>
+        <p id="writeme"></p>
+
+    </body>
+</html>
