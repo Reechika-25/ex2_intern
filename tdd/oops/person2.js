@@ -57,6 +57,4 @@ export class Person {
       return out;
     }
   }
-  white_check_mark
-  eyes
   

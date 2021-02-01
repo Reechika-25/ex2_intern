@@ -65,13 +65,3 @@ describe('Testing Person functionality', () => {
     ]);
   });
 });
-white_check_mark
-eyes
-raised_hands
-
-
-
-
-
-New
-1:33
