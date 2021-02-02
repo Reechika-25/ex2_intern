@@ -47,7 +47,7 @@ describe("Testing UserDemands Functionality",()=>{
 
     it("Does function returns correct output when file found",()=>{
 
-        const filePath = './cricket.txt';
+        const filePath = '/home/rjain/rjain-branch/tdd/number-frequency/cricket.txt';
         
         let sortedWordInstance = new UserDemands();
         expect(sortedWordInstance.printWordsSortedAccordingToFrequency(filePath)).toStrictEqual([

@@ -1,5 +1,5 @@
-import {Person} from "./person"
-import {PersonCollection}  from "./person"
+import {Person} from "./person1"
+import {PersonCollection}  from "./person1"
 
 describe("Testing Person functionality",()=>{
 

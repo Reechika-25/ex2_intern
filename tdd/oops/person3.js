@@ -1,12 +1,15 @@
-const http = require('http');
-let personData = require('./data.json')
+
 
 class PersonData{
+
+    constructor(){
+      this.personData = require('./data.json');
+    }
 
 
     updateHTMLContent(){
 
-        personData = personData.sort((person1,person2) => {
+        this.personData = this.personData.sort((person1,person2) => {
             if (
                 person1.Name.firstName.toLowerCase() >
                 person2.Name.firstName.toLowerCase()
@@ -29,24 +32,28 @@ class PersonData{
               }
         
         });
-        
-        return personData;
+
+        return '';
+     }
+
+    displayResult(){
+
+      let items='';
+      this.personData.forEach((element)=>
+       {
+           items+=JSON.stringify(element)+'<br>'
+       })
+      document.write(items)
     }
+
+
 }
 
 
 let personDataInstance = new PersonData();
-let sortedArray = personDataInstance.updateHTMLContent();
-console.log(sortedArray)
+personDataInstance.updateHTMLContent();
+personDataInstance.displayResult();
 
-http
-  .createServer(function (req, res) {
-    res.write(""); //write a response to the client
-    res.end(`<html><body>${JSON.stringify(personData)}</body></html>`); //end the response
-  })
-  .listen(8000, () => {
-    console.log("server running");
-  });
 
 
 

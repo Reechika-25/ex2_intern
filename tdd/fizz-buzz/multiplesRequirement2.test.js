@@ -1,5 +1,5 @@
 
-import {Multiple} from "./multiples.js"
+import {Multiple} from "./multiplesRequirement2.js"
 
 describe("Testing Multiple functionality",()=>{
 

@@ -16,6 +16,7 @@ export class PersonCollection{
 
     addPerson (name,address,age){
         this.personArray.push(new Person(name,address,age));
+        return '';
     }
 
     printInfo(){

@@ -8,6 +8,7 @@ export class Person {
   export class PersonCollection {
     constructor() {
       this.personArray = [];
+      this.person
     }
     addPerson(name, address, age) {
       this.personArray.push(new Person(name, address, age));
@@ -24,7 +25,10 @@ export class Person {
       return out;
     }
     personsBornAfter1990() {
-      let out = [];
+
+      let out = this.personArray.filter(obj => obj.age <= 30)
+      return out;
+      /*let out = [];
       for (let itr = 0; itr < this.personArray.length; itr++) {
         if (this.personArray[itr].age <= 30)
           out.push({
@@ -33,7 +37,7 @@ export class Person {
             name: this.personArray[itr].name
           });
       }
-      return out;
+      return out;*/
     }
     personNameStartsWithS() {
       let out = [];

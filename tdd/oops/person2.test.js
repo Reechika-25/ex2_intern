@@ -42,7 +42,7 @@ describe('Testing Person functionality', () => {
     let colInstance = new PersonCollection();
     colInstance.addPerson('Reechika', 'fbd', 25);
     colInstance.addPerson('sanjay', 'fbd', 21);
-    expect(colInstance.personsBornAfter1990()).toStrictEqual([
+    expect(colInstance.personsBornAfter1990()).toBe([
       { address: 'fbd', age: 25, name: 'Reechika' },
       { address: 'fbd', age: 21, name: 'sanjay' }
     ]);

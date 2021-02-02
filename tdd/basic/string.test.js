@@ -1,4 +1,4 @@
-import {theString} from "./class"
+import {theString} from "./string"
 
 describe("Testing thestring functionality",()=>{
 
