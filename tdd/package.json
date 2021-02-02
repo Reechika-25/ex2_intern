@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/exsquared/class-of-2021#readme",
   "dependencies": {
+    "is-valid-path": "^0.1.1",
     "require": "^2.4.20"
   },
   "devDependencies": {
