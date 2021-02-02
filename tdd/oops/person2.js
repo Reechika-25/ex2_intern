@@ -26,9 +26,7 @@ export class Person {
     }
     personsBornAfter1990() {
 
-      let out = this.personArray.filter(obj => obj.age <= 30)
-      return out;
-      /*let out = [];
+      let out = [];
       for (let itr = 0; itr < this.personArray.length; itr++) {
         if (this.personArray[itr].age <= 30)
           out.push({
@@ -37,7 +35,7 @@ export class Person {
             name: this.personArray[itr].name
           });
       }
-      return out;*/
+      return out;
     }
     personNameStartsWithS() {
       let out = [];
