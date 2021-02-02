@@ -53,6 +53,7 @@ class PersonData{
 let personDataInstance = new PersonData();
 personDataInstance.updateHTMLContent();
 personDataInstance.displayResult();
+exports.PersonData = PersonData;
 
 
 
