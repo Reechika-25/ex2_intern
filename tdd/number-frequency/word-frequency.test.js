@@ -36,18 +36,9 @@ describe("Testing UserDemands Functionality",()=>{
     });
 
 
-    it("does function above returns file not found when valid charcacters in file path but file does nopt exist",()=>{
-
-        const filePath = './src/cricket.txt';
-
-        let sortedWordInstance = new UserDemands();
-        expect(sortedWordInstance.printWordsSortedAccordingToFrequency(filePath)).toBe("File Not Found");
-    });
-
-
     it("Does function returns correct output when file found",()=>{
 
-        const filePath = '/home/rjain/rjain-branch/tdd/number-frequency/cricket.txt';
+        const filePath = '/home/rjain/rjain-workbranch/tdd/number-frequency/cricket.txt';
         
         let sortedWordInstance = new UserDemands();
         expect(sortedWordInstance.printWordsSortedAccordingToFrequency(filePath)).toStrictEqual([

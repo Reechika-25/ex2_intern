@@ -1,9 +1,11 @@
+
 class Character{
      
     static isAlpha(ch){
         return ((ch >= 'a' && ch <= 'z') ||
                 (ch >= 'A' &&  ch <= 'Z') ||
-                (ch >= '1' &&  ch <= '9'));
+                (ch >= '0' &&  ch <= '9') ||
+                (ch === '\''));
     }
 }
 
@@ -40,11 +42,11 @@ class File{
     readAndStoreFile(){
 
         const fs = require('fs');
-        if(fs.existsSync(this.filePath)){
-            this.data = fs.readFileSync(this.filePath,'utf-8');
-            return true;
-        }
-        return false;
+        const path = require('path');
+        this.data = fs.readFileSync(__dirname+'/cricket.txt','utf-8');
+        this.data = this.data.toLowerCase();
+        return true;
+
     }
 
     makewordFreqMapOfFile(){
@@ -58,12 +60,13 @@ class File{
              for(nonAlphaPtr = filePtr ; nonAlphaPtr < fileSize && !Character.isAlpha(this.data[nonAlphaPtr]) ; nonAlphaPtr ++);
              if(filePtr == fileSize)   
                 break;
-             nextWord = "";
+             nextWord = " ";
 
              let alphaPtr = -1;
              for( alphaPtr = nonAlphaPtr;alphaPtr < fileSize && Character.isAlpha(this.data[alphaPtr]);alphaPtr++){
                      nextWord += this.data[alphaPtr];
              }
+             nextWord += " ";
              (this.wordFreqMap[nextWord])?this.wordFreqMap[nextWord] += 1:this.wordFreqMap[nextWord] = 1;
              if( filePtr == fileSize)
                   break;
@@ -80,7 +83,7 @@ class File{
      }
 }
 
-export class UserDemands{
+class UserDemands{
 
     printWordsSortedAccordingToFrequency(filePath){
         if(typeof filePath === 'string'){
@@ -88,12 +91,27 @@ export class UserDemands{
             let fileInstance = new File(filePath);
             if(!fileInstance.checkValidCharactersInFilePath())
                 return "Invalid characters in filePath";
-            if(!fileInstance.readAndStoreFile())
-                return "File Not Found";
+            fileInstance.readAndStoreFile();
             fileInstance.makewordFreqMapOfFile();
             return fileInstance.sortedWordsAccordingToFreq();
     }
     return 'null';
    }
+
+   displayResult(sortedArray){
+
+    let items='';
+    sortedArray.forEach((element)=>
+     {
+         items += String(element.word) + ' : ' + String(element.count) +'<br>';
+     })
+    document.write(items);
+   }
 }
+
+exports.UserDemands = UserDemands;
+
+let userInstance = new UserDemands();
+let sortedArray = userInstance.printWordsSortedAccordingToFrequency('/home/rjain/rjain-workbranch/tdd/number-frequency/cricket.txt');
+userInstance.displayResult(sortedArray);
 
