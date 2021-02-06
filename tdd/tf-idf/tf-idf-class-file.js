@@ -19,13 +19,12 @@ class File{
         this.data = this.data.toLowerCase();
 
         let fileSize = this.data.length;
-        if(fileSize === 0)   return;
         let nextWord = "";
         for(let filePtr = 0;filePtr < fileSize;filePtr++){
              
              let nonAlphaPtr = -1;
              for(nonAlphaPtr = filePtr ; nonAlphaPtr < fileSize && !character.Character.isAlpha(this.data[nonAlphaPtr]) ; nonAlphaPtr ++);
-             if(filePtr == fileSize)   
+             if(nonAlphaPtr == fileSize)   
                 break;
              nextWord = " ";
 
@@ -36,8 +35,6 @@ class File{
              nextWord += " ";
              this.fileWords += 1;
              hashmap.HashMap.incCount(this.tfMap,nextWord);
-             if( filePtr == fileSize)
-                  break;
              filePtr = alphaPtr;          
         
          }
