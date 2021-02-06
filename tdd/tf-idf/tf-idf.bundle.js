@@ -1,15 +1,12 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 class Character{
-
     static isAlpha(ch){
-
         return ((ch >= 'a'  && ch <= 'z') ||
                 (ch >= 'A'  && ch <= 'Z') ||
                 (ch >= '0'  && ch <= '9') ||
                 (ch === '\''));
     }
 }
-
 
 exports.Character = Character;
 },{}],2:[function(require,module,exports){
@@ -69,23 +66,14 @@ class File{
      updateTfIdfMap(idfMap,docNo){
 
         for(let [key,value] of this.tfMap){
-           //console.log(key + value);
            let finalVal = parseFloat(Math.log2(docNo/(idfMap.get(key))));
-           //console.log(value * finalVal);
            this.tfIdfMap.set(key ,parseFloat(value * finalVal)) ;
-           //console.log(parseFloat(this.tfIdfMap.get(key)));
         }
-        //console.log(this.tfIdfMap);
         this.tfIdfMap = new Map([...this.tfIdfMap.entries()].sort((a, b) => b[1] - a[1]));
-        //console.log(this.tfIdfMap);
-
-     }
+      }
 }
 
 exports.File = File;
-
-//let fileInstance = new File('./cricket.txt');
-//fileInstance.makeTfIdfMap();
 },{"./tf-idf-class-character.js":1,"./tf-idf-class-hashmap.js":3}],3:[function(require,module,exports){
 class HashMap{
 
@@ -136,17 +124,21 @@ class TfIdf{
         if(!this.fileInstanceMap.has(filePath))
              await this.addFile(filePath);
         await this.fileInstanceMap.get(filePath).updateTfIdfMap(this.idfMap,this.documents);
-        this.fileInstanceMap.get(filePath).tfIdfMap
+        await this.printTfIdfTable(filePath);
+    }
+
+    printTfIdfTable(filePath){
+        document.write('<h1>' + filePath +'</h1>' + '<br><br>');
+        let value = this.fileInstanceMap.get(filePath);
+        let tfidf = '';
+        for(let [first,second] of value.tfIdfMap)
+                tfidf += (String(first) + '  :  ' + String(second) + '<br>');
+        document.write(tfidf);
     }
 
     async printTfIdfForAll(){
-
-        for(let [key,value] of this.fileInstanceMap){
-            console.log(key + '\n');
+        for(let [key,value] of this.fileInstanceMap)
             await this.getTfIdf(key);
-            console.log(value.tfIdfMap);
-
-        }
     }
 }
 

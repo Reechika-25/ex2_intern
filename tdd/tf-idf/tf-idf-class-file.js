@@ -5,7 +5,6 @@ const character = require('./tf-idf-class-character.js')
 class File{
 
     constructor(filePath){
-
         this.filePath = filePath;
         this.tfMap = new Map();
         this.tfIdfMap = new Map();
@@ -42,7 +41,6 @@ class File{
              filePtr = alphaPtr;          
         
          }
-
          await this.updateTfMap();
      }
 
@@ -52,22 +50,12 @@ class File{
      }
 
      updateTfIdfMap(idfMap,docNo){
-
         for(let [key,value] of this.tfMap){
-           //console.log(key + value);
            let finalVal = parseFloat(Math.log2(docNo/(idfMap.get(key))));
-           //console.log(value * finalVal);
            this.tfIdfMap.set(key ,parseFloat(value * finalVal)) ;
-           //console.log(parseFloat(this.tfIdfMap.get(key)));
         }
-        //console.log(this.tfIdfMap);
         this.tfIdfMap = new Map([...this.tfIdfMap.entries()].sort((a, b) => b[1] - a[1]));
-        //console.log(this.tfIdfMap);
-
-     }
+      }
 }
 
 exports.File = File;
-
-//let fileInstance = new File('./cricket.txt');
-//fileInstance.makeTfIdfMap();

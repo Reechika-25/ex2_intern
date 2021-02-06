@@ -1,5 +1,4 @@
 class HashMap{
-
     static incCount(myMap,key){
 
         if(myMap.has(key))
