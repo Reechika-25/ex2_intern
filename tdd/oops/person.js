@@ -1,8 +1,18 @@
-export class Person{
+const attributes = require('./person-attributes.js')
 
-    constructor(name,address,age){
-        this.name = name;
-        this.address = address;
-        this.age = age;
+class Person{
+
+    constructor(personObj = {}){
+        this.id = personObj.id;
+        this.name = new attributes.Name(personObj.Name);
+        this.address = new attributes.Address(personObj.Address);
+        this.age = this.findAgeFromDob(personObj.dob);
+    }
+
+    findAgeFromDob(birthDate){
+        let age = new Date().getFullYear() - attributes.DateOfBirth.getYearFromShortDate(birthDate);
+        return age;
     }
 }
+
+exports.Person = Person;
