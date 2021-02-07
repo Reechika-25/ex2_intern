@@ -17,12 +17,19 @@ export class FundInfo{
         return (companyName === "" && city === "" && state === "" && round === "");
     }
 
+    isValidTypes(companyName,city,state,round){
+
+        return (typeof companyName === 'string' &&
+                typeof city === 'string' &&
+                typeof state === 'string' &&
+                typeof round === 'string');
+    }
+
     findBy(companyName = "", city="", state="" , round=""){
         if(this.noParameter(companyName,city,state,round))   
             return {};
 
-        if(typeof companyName === 'string' && typeof city === 'string' && 
-           typeof state === 'string' && typeof round === 'string'){
+        if(this.isValidTypes(companyName,city,state,round)){
             for(let itr = 0;itr < this.fundData.length;itr ++){
                if(this.matchInputs(companyName,city,state,round,itr))
                    return this.fundData[itr];
@@ -43,10 +50,7 @@ export class FundInfo{
               if(this.matchInputs(companyName,city,state,round,itr))
                  out.push(this.fundData[itr]);
             }
-
-            return out;
         }
-
-        return [];
+        return out;
     }
 }
