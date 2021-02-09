@@ -964,6 +964,7 @@ class ReadFile{
         let cityArray = this.peopleInstance.personLivingInNoida(city);
     
         this.peopleInstance.printInfoOfPerson(cityArray);
+
      }
 
 }
@@ -980,13 +981,15 @@ function callCity(){
 
 
 function loadPerson(){
-    fileInstance.peopleInstance.printInfoOfPerson(fileInstance.peopleInstance.personArray);
+       if(document.getElementById('city').value == "defaultCity")
+       fileInstance.peopleInstance.printInfoOfPerson(fileInstance.peopleInstance.personArray);
 }
 
 
 var fileInstance = new ReadFile('data.json');
 fileInstance.storeAndPrintFile();
 fileInstance.printFile();
+console.log(document.getElementById('city').value);
 
 
 },{"./data.json":4,"./people.js":6,"fs":1,"path":2}],6:[function(require,module,exports){
