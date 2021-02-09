@@ -265,7 +265,7 @@ function loadPerson(){
            count = 0;
        }
        count += 1;
-       let endIdx = 1 * (count + 1);
+       let endIdx = 5 * (count + 1);
        if(cityValue === "defaultCity"){
          fileInstance.peopleInstance.printInfoOfPerson(fileInstance.peopleInstance.personArray,endIdx);
          return;
@@ -295,7 +295,7 @@ class People{
         return this.personArray.push(new person.Person(personObj));
     }
 
-    printInfoOfPerson(personArray,endIdx = 1){
+    printInfoOfPerson(personArray,endIdx = 5){
         let info = '';
         for(let itr = 0; itr < endIdx && itr < personArray.length; itr ++){
             let personObj = personArray[itr];
@@ -351,6 +351,7 @@ class Name{
         this.lastName = nameObj.lastName;
         this.middleName = nameObj.middleName;
     }
+
 }
 
 class Address{
@@ -381,7 +382,6 @@ const attributes = require('./person-attributes.js')
 class Person{
 
     constructor(personObj = {}){
-        this.id = personObj.id;
         this.name = new attributes.Name(personObj.Name);
         this.address = new attributes.Address(personObj.Address);
         this.age = this.findAgeFromDob(personObj.dob);

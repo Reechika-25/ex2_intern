@@ -3,7 +3,6 @@ const attributes = require('./person-attributes.js')
 class Person{
 
     constructor(personObj = {}){
-        this.id = personObj.id;
         this.name = new attributes.Name(personObj.Name);
         this.address = new attributes.Address(personObj.Address);
         this.age = this.findAgeFromDob(personObj.dob);

@@ -10,7 +10,7 @@ class People{
         return this.personArray.push(new person.Person(personObj));
     }
 
-    printInfoOfPerson(personArray,endIdx = 1){
+    printInfoOfPerson(personArray,endIdx = 5){
         let info = '';
         for(let itr = 0; itr < endIdx && itr < personArray.length; itr ++){
             let personObj = personArray[itr];

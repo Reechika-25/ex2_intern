@@ -5,6 +5,7 @@ class Name{
         this.lastName = nameObj.lastName;
         this.middleName = nameObj.middleName;
     }
+
 }
 
 class Address{
