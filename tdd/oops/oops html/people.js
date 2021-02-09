@@ -16,7 +16,7 @@ class People{
             let personObj = personArray[itr];
             info += '<h3>' + 'Person ' + String(itr + 1) + '</h3>';
             info += 'Name : ' + String(personObj.name.firstName) + ' ' + String(personObj.name.middleName) + ' ' +String(personObj.name.lastName) + '<br>';
-            //info += 'Age : ' + String(personObj.age) + '<br>';
+            info += 'Age : ' + String(personObj.age) + '<br>';
             info += 'Address : ' + String(personObj.address.streetAddress1) + ' ' + String(personObj.address.streetAddress2)
                      + ' ' + String(personObj.address.city) + ' ' + String(personObj.address.state) + ' ' + String(personObj.address.zipCode) + '<br><br>';
         }
@@ -54,6 +54,19 @@ class People{
                return (city1>city2)?1:-1;
             return (zipCode1 > zipCode2)?1:-1;
         });
+    }
+
+    removeDuplicates(personArray){
+        let uniquePersonMap = new Map();
+        let uniqueArray = [];
+        for(let itr = 0;itr < personArray.length; itr ++){
+            let personStr = person.Person.convertToString(personArray[itr]);
+            if(!uniquePersonMap.has(personStr)){
+                uniquePersonMap.set(personStr,true);
+                uniqueArray.push(personArray[itr]);
+            }
+        }
+        return uniqueArray;
     }
 }
 

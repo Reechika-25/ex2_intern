@@ -233,6 +233,7 @@ class ReadFile{
             this.peopleInstance.addNewPerson(this.data[itr]);
         }
         this.peopleInstance.sortArrayInfo();
+        this.peopleInstance.personArray = this.peopleInstance.removeDuplicates(this.peopleInstance.personArray);
         this.peopleInstance.printInfoOfPerson(this.peopleInstance.personArray);
     }
 
@@ -271,6 +272,7 @@ function loadPerson(){
          return;
        }
        let cityArray = fileInstance.peopleInstance.personLivingInNoida(cityValue);
+       cityArray = fileInstance.peopleInstance.removeDuplicates(cityArray);
        fileInstance.peopleInstance.printInfoOfPerson(cityArray,endIdx);
        return;
 }
@@ -301,7 +303,7 @@ class People{
             let personObj = personArray[itr];
             info += '<h3>' + 'Person ' + String(itr + 1) + '</h3>';
             info += 'Name : ' + String(personObj.name.firstName) + ' ' + String(personObj.name.middleName) + ' ' +String(personObj.name.lastName) + '<br>';
-            //info += 'Age : ' + String(personObj.age) + '<br>';
+            info += 'Age : ' + String(personObj.age) + '<br>';
             info += 'Address : ' + String(personObj.address.streetAddress1) + ' ' + String(personObj.address.streetAddress2)
                      + ' ' + String(personObj.address.city) + ' ' + String(personObj.address.state) + ' ' + String(personObj.address.zipCode) + '<br><br>';
         }
@@ -339,6 +341,19 @@ class People{
                return (city1>city2)?1:-1;
             return (zipCode1 > zipCode2)?1:-1;
         });
+    }
+
+    removeDuplicates(personArray){
+        let uniquePersonMap = new Map();
+        let uniqueArray = [];
+        for(let itr = 0;itr < personArray.length; itr ++){
+            let personStr = person.Person.convertToString(personArray[itr]);
+            if(!uniquePersonMap.has(personStr)){
+                uniquePersonMap.set(personStr,true);
+                uniqueArray.push(personArray[itr]);
+            }
+        }
+        return uniqueArray;
     }
 }
 
@@ -390,6 +405,15 @@ class Person{
     findAgeFromDob(birthDate){
         let age = new Date().getFullYear() - attributes.DateOfBirth.getYearFromShortDate(birthDate);
         return age;
+    }
+
+    static convertToString(personObj){
+        let info = '';
+        info += 'Name : ' + String(personObj.name.firstName) + ' ' + String(personObj.name.middleName) + ' ' +String(personObj.name.lastName) + '<br>';
+        info += 'Age : ' + String(personObj.age) + '<br>';
+        info += 'Address : ' + String(personObj.address.streetAddress1) + ' ' + String(personObj.address.streetAddress2)
+                 + ' ' + String(personObj.address.city) + ' ' + String(personObj.address.state) + ' ' + String(personObj.address.zipCode) + '<br><br>';
+        return info;
     }
 }
 

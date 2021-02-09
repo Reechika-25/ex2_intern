@@ -20,6 +20,7 @@ class ReadFile{
             this.peopleInstance.addNewPerson(this.data[itr]);
         }
         this.peopleInstance.sortArrayInfo();
+        this.peopleInstance.personArray = this.peopleInstance.removeDuplicates(this.peopleInstance.personArray);
         this.peopleInstance.printInfoOfPerson(this.peopleInstance.personArray);
     }
 
@@ -58,6 +59,7 @@ function loadPerson(){
          return;
        }
        let cityArray = fileInstance.peopleInstance.personLivingInNoida(cityValue);
+       cityArray = fileInstance.peopleInstance.removeDuplicates(cityArray);
        fileInstance.peopleInstance.printInfoOfPerson(cityArray,endIdx);
        return;
 }
@@ -66,5 +68,4 @@ function loadPerson(){
 var fileInstance = new ReadFile('data.json');
 fileInstance.storeAndPrintFile();
 fileInstance.printFile();
-console.log(document.getElementById('city').value);
 
