@@ -4,21 +4,15 @@ class People{
 
     constructor(){
         this.personArray = [];
-        this.ptr = 0;
     }
 
     addNewPerson(personObj){
         return this.personArray.push(new person.Person(personObj));
     }
 
-    printInfoOfPerson(personArray){
+    printInfoOfPerson(personArray,endIdx = 1){
         let info = '';
-        let start = 0;
-        let end = 5;
-        if(personArray === this.personArray){
-           end = this.ptr + 5;
-        }
-        for(let itr = start; itr < end && itr < personArray.length; itr ++){
+        for(let itr = 0; itr < endIdx && itr < personArray.length; itr ++){
             let personObj = personArray[itr];
             info += '<h3>' + 'Person ' + String(itr + 1) + '</h3>';
             info += 'Name : ' + String(personObj.name.firstName) + ' ' + String(personObj.name.middleName) + ' ' +String(personObj.name.lastName) + '<br>';
@@ -27,8 +21,6 @@ class People{
                      + ' ' + String(personObj.address.city) + ' ' + String(personObj.address.state) + ' ' + String(personObj.address.zipCode) + '<br><br>';
         }
         document.getElementById('content').innerHTML = info;
-        if(personArray === this.personArray) 
-              this.ptr += 5;
         return '';
     }
 

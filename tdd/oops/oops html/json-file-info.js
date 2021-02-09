@@ -1,6 +1,4 @@
 const people = require('./people.js');
-const fs = require('fs');
-const path = require('path');
 const dataFile = require('./data.json');
 
 class ReadFile{
@@ -45,10 +43,23 @@ function callCity(){
     fileInstance.filterCity(city);
 }
 
-
+let count = 0;
+let prevCityValue = '';
 function loadPerson(){
-       if(document.getElementById('city').value == "defaultCity")
-       fileInstance.peopleInstance.printInfoOfPerson(fileInstance.peopleInstance.personArray);
+       let cityValue = document.getElementById('city').value;
+       if(prevCityValue !== cityValue){
+           prevCityValue = cityValue;
+           count = 0;
+       }
+       count += 1;
+       let endIdx = 5 * (count + 1);
+       if(cityValue === "defaultCity"){
+         fileInstance.peopleInstance.printInfoOfPerson(fileInstance.peopleInstance.personArray,endIdx);
+         return;
+       }
+       let cityArray = fileInstance.peopleInstance.personLivingInNoida(cityValue);
+       fileInstance.peopleInstance.printInfoOfPerson(cityArray,endIdx);
+       return;
 }
 
 
