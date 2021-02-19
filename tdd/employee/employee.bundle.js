@@ -24,13 +24,13 @@ class Address{
 class Region{
     static getRegionIdFromRegion(region){
         if(region === 'Northern')
-            return 1;
-        if(region === 'Southern')
-            return 2;
-        if(region === 'Eastern')
             return 3;
-        if(region === 'Western')
+        if(region === 'Southern')
             return 4;
+        if(region === 'Eastern')
+            return 1;
+        if(region === 'Western')
+            return 2;
     }
 }
 
@@ -94,7 +94,7 @@ document.getElementById('submit').addEventListener('click',function(){
 });
 },{"./employee-attributes.js":1,"./employee.js":4}],3:[function(require,module,exports){
 const empCollect = require('./employee-collection.js');
-const attribute = require('./employee-attributes.js');
+
 
 async function readData(){
 
@@ -110,7 +110,7 @@ readData();
 
 
 
-},{"./employee-attributes.js":1,"./employee-collection.js":2}],4:[function(require,module,exports){
+},{"./employee-collection.js":2}],4:[function(require,module,exports){
 const attribute = require('./employee-attributes.js')
 
 class Employee{

@@ -23,13 +23,13 @@ class Address{
 class Region{
     static getRegionIdFromRegion(region){
         if(region === 'Northern')
-            return 1;
-        if(region === 'Southern')
-            return 2;
-        if(region === 'Eastern')
             return 3;
-        if(region === 'Western')
+        if(region === 'Southern')
             return 4;
+        if(region === 'Eastern')
+            return 1;
+        if(region === 'Western')
+            return 2;
     }
 }
 
