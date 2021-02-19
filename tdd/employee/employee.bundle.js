@@ -85,8 +85,6 @@ exports.storeEmployeeData = storeEmployeeData;
 document.getElementById('submit').addEventListener('click',function(){
 
     let region = document.getElementById('region').value;
-    console.log(region);
-
     let regionId = attribute.Region.getRegionIdFromRegion(region);
     let filteredArr = newCollectionInstance.filterByRegionId(regionId);
     EmployeeCollection.printEmployees(filteredArr);
@@ -101,7 +99,6 @@ async function readData(){
     let url = 'http://localhost:2000/';
     let response = await fetch(url);
     let jsonData = await response.json();
-    console.log(jsonData.recordset);
     empCollect.storeEmployeeData(jsonData.recordset);
 
 }
