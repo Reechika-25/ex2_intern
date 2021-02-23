@@ -9,14 +9,11 @@ class DBEmployee{
         return data;
     }
 
-    async addNewEmployee(){
-
-        let query = `INSERT INTO dbo.Employees(EmployeeID, LastName, FirstName)
-        VALUES (100, 'Jain', 'Reechika')`
+    async addNewEmployee(body){
+        let query = `INSERT INTO dbo.Employees (LastName, FirstName)
+        VALUES ('${body.LastName}','${body.FirstName}')`
 
         let data = await repo.queryDBForEmployees(query);
-
-        console.log("query posted");
         return data;
     }
 
@@ -30,8 +27,8 @@ async function getAllEmployees(){
      return data;
 }
 
-async function addNewEmployee(){
-    let data = await dbEmployeeInstance.addNewEmployee();
+async function addNewEmployee(body){
+    let data = await dbEmployeeInstance.addNewEmployee(body);
     return data;
 }
 

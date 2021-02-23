@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const apino = 3000;
@@ -8,6 +9,7 @@ app.listen(apino,()=>{
 });
 
 
+app.use(express.json());
 app.use('/',routes.router);
 
 

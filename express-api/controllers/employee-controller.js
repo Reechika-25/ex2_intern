@@ -6,8 +6,7 @@ exports.getDataOfEmployees = async (req,res) => {
     
 }
 
-exports.addNewEmployee = async (req,res) => {
-    console.log('on the way for posting');
-    let data = await employee.addNewEmployee();
+exports.addNewEmployee = async(req,res) => {
+    let data = await employee.addNewEmployee(req.body);
     res.send(data.recordsets[0]);
 }
