@@ -10,3 +10,8 @@ exports.addNewEmployee = async(req,res) => {
     let data = await employee.addNewEmployee(req.body);
     res.send(data.recordsets[0]);
 }
+
+exports.updateEmployeeData = async(req,res)=>{
+    let data = await employee.updateEmployeeData(req.body);
+    res.send(data.recordsets[0]);
+}

@@ -6,4 +6,6 @@ router.get('/employees',empController.getDataOfEmployees);
 
 router.post('/addEmployee',empController.addNewEmployee);
 
+router.put('/updateEmployee',empController.updateEmployeeData);
+
 exports.router = router;

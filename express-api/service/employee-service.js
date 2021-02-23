@@ -17,6 +17,12 @@ class DBEmployee{
         return data;
     }
 
+    async updateEmployeeData(body){
+       let query = `update dbo.Employees set LastName = '${body.LastName}' where FirstName = 'Reechika'`
+       let data = await repo.queryDBForEmployees(query);
+       return data;
+    }
+
 }
 
 
@@ -32,5 +38,11 @@ async function addNewEmployee(body){
     return data;
 }
 
+async function updateEmployeeData(body){
+    let data = await dbEmployeeInstance.updateEmployeeData(body);
+    return data;
+}
+
 exports.getAllEmployees = getAllEmployees;
 exports.addNewEmployee = addNewEmployee;
+exports.updateEmployeeData = updateEmployeeData;
