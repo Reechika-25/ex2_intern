@@ -4,22 +4,18 @@ class DBEmployee{
 
     async getAll(){
 
-        let query = `select EmployeeID,LastName,FirstName from dbo.Employees`;
-        let data = await repo.queryDBForEmployees(query);
+        let data = await repo.getAllEmployees();
         return data;
     }
 
     async addNewEmployee(body){
-        let query = `INSERT INTO dbo.Employees (LastName, FirstName)
-        VALUES ('${body.LastName}','${body.FirstName}')`
 
-        let data = await repo.queryDBForEmployees(query);
+        let data = await repo.addNewEmployees(body);
         return data;
     }
 
     async updateEmployeeData(body){
-       let query = `update dbo.Employees set LastName = '${body.LastName}' where FirstName = 'Reechika'`
-       let data = await repo.queryDBForEmployees(query);
+       let data = await repo.updateEmployees(body);
        return data;
     }
 
