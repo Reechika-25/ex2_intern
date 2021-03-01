@@ -1,0 +1,25 @@
+{
+  "name": "booking-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukeshphulwani66/bot-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukeshphulwani66/bot-ui/issues"
+  },
+  "homepage": "https://github.com/mukeshphulwani66/bot-ui#readme",
+  "dependencies": {
+    "@google-cloud/dialogflow": "^3.3.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  }
+}
