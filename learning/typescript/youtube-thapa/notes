@@ -1,0 +1,7 @@
+1. typescript is a superset of javascript
+2. typescript has some additional features 
+   -- strong/static typing
+   -- object oriented features
+   -- compile time error
+
+3. typescript + transpile/complie = javascript

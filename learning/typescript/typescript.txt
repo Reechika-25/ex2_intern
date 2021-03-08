@@ -1,0 +1,126 @@
+
+TypeScript is JavaScript’s runtime with a compile-time type checker
+
+
+1. type coercion in javascript
+   https://www.geeksforgeeks.org/what-is-type-coercion-in-javascript/
+
+2.We said earlier that some languages wouldn’t allow those buggy programs to run at all. Detecting errors in code without running it is referred to as static checking. Determining what’s an error and what’s not based on the kinds of values being operated on is known as static type checking.
+
+TypeScript checks a program for errors before execution, and does so based on the kinds of values, it’s a static type checker.
+
+3. relation of typescript and javascript
+   -- syntax
+   -- types    
+      TypeScript is a typed superset, meaning that it adds rules about how different kinds of values can be used.
+      If you move some code from a JavaScript file to a TypeScript file, you might see type errors depending on how the code is written. These may be legitimate problems with the code, or TypeScript being overly conservative. Throughout this guide we’ll demonstrate how to add various TypeScript syntax to eliminate such errors.
+   -- runtime behaviour
+      TypeScript never changes the runtime behavior of JavaScript code.
+      This means that if you move code from JavaScript to TypeScript, it is guaranteed to run the same way.
+   -- erased types
+      once TypeScript’s compiler is done with checking your code, it erases the types to produce the resulting “compiled” code.
+
+
+4.A reader who completes the walkthrough should be able to:
+
+   Read and understand commonly-used TypeScript syntax and patterns
+   Explain the effects of important compiler options
+   Correctly predict type system behavior in most cases
+   Write a .d.ts declaration for a simple function, object, or class
+
+5.Basic types (syntax - let <var_name> : <data_type> = <value>)
+  
+  -- boolean
+  -- number,bigint
+  -- string (embedded expressions,backticks,single_quotes or double quotes)
+  -- array 
+     let list : number[] =[1,2,3,4]
+     let list : Array<data_type> = [1,2,3,4] (generic type)
+  -- tuple
+     Tuple types allow you to express an array with a fixed number of elements whose types are known, but need not be the same. For example, you may want to represent a value as a pair of a string and a   number:
+
+// Declare a tuple type
+let x: [string, number];
+// Initialize it
+x = ["hello", 10]; // OK
+// Initialize it incorrectly
+x = [10, "hello"]; // Error
+Type 'number' is not assignable to type 'string'.
+Type 'string' is not assignable to type 'number'.
+
+When accessing an element with a known index, the correct type is retrieved:
+Accessing an element outside the set of known indices fails with an error:
+
+  -- enum
+  -- unknown
+     this variable could be anything, so we give it the unknown type.(taking input from users)
+     declare const maybe: unknown;
+// 'maybe' could be a string, object, boolean, undefined, or other types
+const aNumber: number = maybe;
+Type 'unknown' is not assignable to type 'number'.
+
+if (maybe === true) {
+  // TypeScript knows that maybe is a boolean now
+  const aBoolean: boolean = maybe;
+  // So, it cannot be a string
+  const aString: string = maybe;
+Type 'boolean' is not assignable to type 'string'.
+}
+
+if (typeof maybe === "string") {
+  // TypeScript knows that maybe is a string
+  const aString: string = maybe;
+  // So, it cannot be a boolean
+  const aBoolean: boolean = maybe;
+Type 'string' is not assignable to type 'boolean'.
+}
+
+  -- any
+     The any type has been in TypeScript since the first release in 2012. It represents all possible JavaScript values — primitives, objects, arrays, functions, errors, symbols, what have you. In TypeScript, every type is assignable to any . This makes any a top type (also known as a universal supertype) of the type system.
+
+  -- void
+     void is a little like the opposite of any: the absence of having any type at all. You may commonly see this as the return type of functions that do not return a value:
+  -- null and undefined
+     see the difference from https://www.javatpoint.com/null-vs-undefined
+  -- never
+     The never type represents the type of values that never occur. For instance, never is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns. 
+     // Function returning never must not have a reachable end point
+function error(message: string): never {
+  throw new Error(message);
+}
+
+// Inferred return type is never
+function fail() {
+  return error("Something failed");
+}
+
+ -- object
+    object is a type that represents the non-primitive type, i.e. anything that is not number, string, boolean, bigint, symbol, null, or undefined.
+
+
+ 6. type assertions in javascript
+    Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion is like a type cast in other languages, but it performs no special checking or restructuring of data. It has no runtime impact and is used purely by the compiler. TypeScript assumes that you, the programmer, have performed any special checks that you need.
+
+
+INTERFACES
+
+1. our first interface  -- basicTypes.ts
+   optional properties  -- The advantage of optional properties is that you can describe these possibly available properties while still also preventing use of properties that are not part of the interface. 
+   readonly properties  -- for making a property constant for making a constant array ReadOnlyArray<T> 
+   excess property checks -- Object literals get special treatment and undergo excess property checking when assigning them to other variables, or passing them as arguments. If an object literal has any properties that the “target type” doesn’t have, you’ll get an error:
+   excess property checks correction methods
+   -- type assertion
+   -- index signatures
+   -- storing in other object
+
+   Function Types 
+   --  In addition to describing an object with properties, interfaces are also capable of describing function types.
+
+
+
+
+
+
+
+   
+

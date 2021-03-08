@@ -1,0 +1,16 @@
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.csprojAssemblyReference.cache
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.GeneratedMSBuildEditorConfig.editorconfig
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.AssemblyInfoInputs.cache
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.AssemblyInfo.cs
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.csproj.CoreCompileInputs.cache
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry.deps.json
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry.runtimeconfig.json
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry.runtimeconfig.dev.json
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry.dll
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/ref/youtube-harry.dll
+/home/rjain/learning/csharp/youtube-harry/bin/Debug/net5.0/youtube-harry.pdb
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.dll
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/ref/youtube-harry.dll
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.pdb
+/home/rjain/learning/csharp/youtube-harry/obj/Debug/net5.0/youtube-harry.genruntimeconfig.cache

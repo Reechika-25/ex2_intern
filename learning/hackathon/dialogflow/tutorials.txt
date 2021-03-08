@@ -1,0 +1,24 @@
+#TUTORIAL 1 : CREATING AND CUSTOMISING AN AGENT
+1. involve customizing these intents to match the purpose and persona of your agent.
+2. The best practice suggests that you accomplish three main goals with your greeting: welcome the user, set expectations, and let the user take control.
+3. INTENT USER UTTERANCE RESPONSE
+4. When we supply multiple responses for an intent, Dialogflow randomly selects a response variant from the list. However, keep in mind that there are more sophisticated ways to handle variations in responses once we start writing code for fulfillment,which enables an intent to employ complex logic
+5.The diamond shape in the flowchart represents a point in conversation where the agent waits for a user utterance. 
+6. training tool
+7. conversation design Process
+8. entities
+
+Process--
+
+1. creating an agent
+2. customising default welcome intent  (intent userutterance response)
+3. create response variants
+4. create a custom intent
+5. add more training phrases
+6. customise the fallback event
+7. create an intent with parameters
+8. extract information using entities and parameters
+9. obtain required parameters using slot filling
+10. create fulfillment using webhook
+11. create a webhook with the inline editor
+12. 

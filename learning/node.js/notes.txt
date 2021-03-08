@@ -1,0 +1,68 @@
+#TUTORIAL 63
+
+1.node.js is a js runtime built on chrome v8 js engine
+2.node.js is designed to build scalable network appications
+3.node.js is a free and open soource environment
+4.node.js allows us to run js on the server
+5.node.js can run on multiple os
+
+
+WHY NODE.JS?
+
+1. you can use js in the entire stack
+2. many famous companies use this as backend
+3. node.js comes with lot of useful built in modules
+4. node.js is fast
+
+NODE.JS REPL (READ - EVALUATE - PRINT - LOOP)
+
+1. when we write node in the terminal the repl starts until we exit
+2. REPL is a computer environment
+
+UNDERSCORE IN NODE.JS
+
+1. to get the last executed result
+
+TAB TAB
+
+1. pressing 2 times tab will give all the inbuilt modules of nodejs
+
+-----------------------------------------------------------------------------------------------------
+
+#TUTORIAL 64
+
+1.to read about built in modules of node read from this link https://nodejs.org/api/modules.html
+
+-----------------------------------------------------------------------------------------------------
+
+#TUTORIAL 65
+
+1. blocking v/s non blocking execution 
+2. blocking -- synchronous
+3. non blocking -- asynchronous
+4. readfile function of fs
+
+----------------------------------------------------------------------------------------------------
+
+#TUTORIAL 66
+
+1. if we give port number 80 we do not need to explicitly mention it
+2. error -- EACCESS error while listening on most ports
+   why ? As a general rule, processes running without root privileges cannot bind to ports below 1024.
+   solution --  run with elevated privileges via sudo
+
+-----------------------------------------------------------------------------------------------------
+
+#TUTORIAL 67
+
+1. custom backend means serving according to the user request
+2. what is favicon.io?
+   A favicon also known as a shortcut icon, website icon, tab icon, URL icon, or bookmark icon, 
+   is a file containing one or more small icons,[1] associated with a particular website or web page.
+   A web designer can create such an icon and upload it to a website (or web page) by several means, 
+   and graphical web browsers will then make use of it.[3] Browsers that provide favicon support typically
+   display a page's favicon in the browser's address bar (sometimes in the history as well) and next to the
+   page's name in a list of bookmarks.[3] Browsers that support a tabbed document interface typically show a page's
+   favicon next to the page's title on the tab, and site-specific browsers use the favicon as a desktop icon.
+
+------------------------------------------------------------------------------------------------------?

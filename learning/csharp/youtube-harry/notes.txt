@@ -1,0 +1,116 @@
+1.usage of c sharp
+  -- games
+  -- console applications
+  -- windows gui
+  -- desktop applications
+  -- websites
+  -- database applications
+
+2. c sharp runs in .net framework
+
+3. what is .net framework
+  -- open source developer platform
+  -- community can contribute
+  -- cross platform developer platform i.e. it runs on all windows mac and linux
+
+4. usage of .net framework
+   -- mobile apps
+   -- desktop guis
+   -- games
+
+5. c# is a language made by microsoft and it works on .net framework
+
+6. .net framework v/s .net core
+7. architecture of .net framework -- https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet-framework
+
+8.A console application is a program designed to be used via a text-only computer interface,
+
+9. difference between write and writeline
+
+10. using system meaning --- can use the classes in system namespace
+
+11. namespace is a container in which all other classes and namespaces come for ex - system is a namespace 
+
+12. console.readline()  stops until the user gives some input
+
+13. DataTypes in C#
+    -- Integer   --- 4 bytes
+    -- Floating Point NUmber --- 4 bytes
+    -- boolean  --- 1 bit
+    -- string   --- 2 bytes /char
+    -- character  --- 2 bytes
+    -- long --- 8 bytes
+    -- double --- 8 bytes (15 decimal digit precision)
+
+14. long has better precision than int and double has better precision than float
+
+15.Console.ReadLine()  returns a string
+
+16. c# is a typesafe language i.e. if the value provided in the variable has not the same data type as variable it will give error.
+
+17. by default decimal numbers are double in c#
+
+18. typecasting
+    -- implicit typecasting
+       char to int to long to float to double
+
+    -- explicit typecasting
+
+
+19. built in methods for conversion
+    -- Convert.ToInt32()
+    -- Convert.ToInt64()
+    -- Convert.ToDouble()
+    -- Convert.ToString()
+
+20. C# operartors
+    -- Arithmetic 
+    -- assignment
+    -- logical ( AND &&  OR || NOT !)
+    -- comparison
+
+21. math operations
+    -- Sqrt --- returns double
+    -- Abs
+    -- Max
+    -- Min
+
+22. String operations( does not affect the original string)
+    -- Length
+    -- ToUpper()
+    -- ToLower()
+    -- string.Concat("str to concatenate with","str to be conactenated")
+    -- IndexOf( str )  -- gives the index for the first occurrence of the str
+    -- Substring(1)
+
+24. String interpolation
+    -- ${}
+
+25. conditionals
+    -- if else
+    -- switch
+
+26.loops
+   -- for 
+   -- while
+   -- do while
+
+27. break , continue
+
+28. methods -- functions (place static in front of method)
+
+29. method overloading
+
+30. references --- kitni baar us function ko refer kia gya hai ?
+
+31. classes --- do not repeat yourself (DRY principle)
+
+32. access modifiers 
+    -- public, private , protected
+
+33. by default the data members and member functions are private
+
+34. mistakes --
+    1. forogot to make the constructor public
+    2. use different  names for namespaces and class
+
